@@ -1,0 +1,4 @@
+{
+  "trivy.useIgnoreFile": true,
+  "trivy.offlineScan": false
+}

@@ -6,6 +6,13 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
     make
 
+# Install trivy
+RUN wget apt-transport-https gnupg \
+    && wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | tee /usr/share/keyrings/trivy.gpg > /dev/null \
+    && echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | tee -a /etc/apt/sources.list.d/trivy.list \
+    && apt-get update \
+    && apt-get -y install --no-install-recommends trivy
+
 USER vscode
 
 ARG TERRAFORM_DOCS_VERSION=0.16.0
