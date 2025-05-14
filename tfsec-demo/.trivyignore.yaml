@@ -1,0 +1,17 @@
+misconfigurations:
+  - id: AVD-AWS-0132
+    statement: "There is no problem with S3-SSE."
+  - id: AVD-AWS-0089
+    paths:
+      - "cfn/s3-server-access-logs.yaml"
+    statement: "It is the destination bucket for S3 Server access logs."
+  - id: AVD-AWS-0090
+    paths:
+      - "cfn/s3-server-access-logs.yaml"
+    statement: "It is the destination bucket for S3 Server access logs."
+#インラインでのignore方法
+##trivy:ignore:AVD-GCP-0051
+# resource "google_container_cluster" "one_off_test" {
+#   name     = var.cluster_name
+#   location = var.region
+#}
