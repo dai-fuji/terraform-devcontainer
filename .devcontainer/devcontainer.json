@@ -1,0 +1,27 @@
+{
+  "name": "AWS Terraform",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "ubuntu-22.04",
+      "TERRAFORM_DOCS_VERSION": "0.16.0",
+      "TFSEC_VERSION": "1.28.0",
+      "TERRASCAN_VERSION": "1.15.2",
+      "TFLINT_AWS_RULESET_VERSION": "0.21.1"
+    }
+  },
+  "postStartCommand": "post-start",
+  "settings": {},
+  "extensions": [
+    "hashicorp.terraform",
+    "oderwat.indent-rainbow",
+    "saoudrizwan.claude-dev",
+    "usernamehw.errorlens",
+    "GitHub.vscode-pull-request-github",
+    "github.vscode-github-actions",
+    "mhutchie.git-graph",
+    "esbenp.prettier-vscode",
+    "yzhang.markdown-all-in-one"
+  ],
+  "remoteUser": "vscode"
+}
